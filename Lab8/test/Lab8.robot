@@ -6,7 +6,7 @@ Library           OperatingSystem
 Verify GitHub Integration
     [Documentation]    ตรวจสอบว่าไฟล์จาก GitHub ถูกดึงมาที่ Workspace จริง
     List Directory    . 
-    File Should Exist    Lab8/tests/Lab8.robot
+    File Should Exist    Lab8/test/Lab8.robot
 
 Verify Robot Framework Execution
     [Documentation]    ทดสอบการทำงานพื้นฐานของ Robot บน Jenkins
