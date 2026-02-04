@@ -1,12 +1,15 @@
 *** Settings ***
-Documentation     ตัวอย่างการทดสอบสำหรับ Lab 8.5
+Documentation     ตรวจสอบความพร้อมของระบบ Lab 8.5
 Library           OperatingSystem
 
 *** Test Cases ***
-เช็คสถานะการทำงานของระบบ
-    [Documentation]    ทดสอบการแสดงผลข้อความพื้นฐาน
-    Log To Console    Robot Framework is working in Jenkins!
-    Should Be Equal    1    1
+Verify GitHub Integration
+    [Documentation]    ตรวจสอบว่าไฟล์จาก GitHub ถูกดึงมาที่ Workspace จริง
+    List Directory    . 
+    File Should Exist    tests/Lab8.robot
 
-ทดสอบความพร้อมของ Workspace
-    List Directory    .
+Verify Robot Framework Execution
+    [Documentation]    ทดสอบการทำงานพื้นฐานของ Robot บน Jenkins
+    ${status}    Set Variable    Ready
+    Should Be Equal    ${status}    Ready
+    Log To Console    System is ready for Deployment!
